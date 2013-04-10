@@ -1,4 +1,4 @@
-package giter.jackalope.servlets;
+package giter.jackalope.utils;
 
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.annotations.AnnotationParser;

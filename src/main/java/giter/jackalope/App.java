@@ -1,6 +1,6 @@
 package giter.jackalope;
 
-import giter.jackalope.servlets.ClassPathAnnotationConfiguration;
+import giter.jackalope.utils.ClassPathAnnotationConfiguration;
 
 import java.io.IOException;
 import java.util.regex.Pattern;

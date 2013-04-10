@@ -1,4 +1,4 @@
-package giter.jackalope.servlets;
+package giter.jackalope.utils;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -27,6 +27,7 @@ public class TemplateLoader {
     conf.setDefaultEncoding("UTF-8");
     conf.setTagSyntax(Configuration.SQUARE_BRACKET_TAG_SYNTAX);
     conf.setURLEscapingCharset("UTF-8");
+    conf.setWhitespaceStripping(true);
     conf.setTemplateExceptionHandler(new TemplateExceptionHandler() {
 
       public void handleTemplateException(TemplateException te, Environment env, Writer out) throws TemplateException {

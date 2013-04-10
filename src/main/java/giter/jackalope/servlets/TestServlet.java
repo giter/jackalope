@@ -3,6 +3,7 @@ package giter.jackalope.servlets;
 import giter.jackalope.model.Attributes;
 import giter.jackalope.model.Block;
 import giter.jackalope.pages.TestBlocks;
+import giter.jackalope.utils.TemplateLoader;
 
 import java.io.IOException;
 import java.util.ArrayList;
