@@ -1,6 +1,12 @@
 package giter.jackalope.servlets;
 
+import giter.jackalope.model.Attributes;
+import giter.jackalope.model.Block;
+import giter.jackalope.pages.TestBlocks;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +21,11 @@ public class TestServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    TemplateLoader.process(request, response, "/hello.ftl");
+
+    List<Block> blocks = new ArrayList<>();
+    blocks.add(TestBlocks.main());
+
+    TemplateLoader.template(request, response, new Attributes("page-test"), blocks);
   }
 
 }

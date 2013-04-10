@@ -2,6 +2,7 @@ package giter.jackalope.servlets;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,8 @@ import freemarker.template.ObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import giter.jackalope.model.Attributes;
+import giter.jackalope.model.Block;
 
 public class TemplateLoader {
 
@@ -35,6 +38,21 @@ public class TemplateLoader {
   public static void process(HttpServletRequest request, HttpServletResponse response, String name) throws IOException {
 
     Template template = conf.getTemplate(name);
+
+    try {
+      template
+          .process(new HttpRequestHashModel(request, response, ObjectWrapper.DEFAULT_WRAPPER), response.getWriter());
+    } catch (TemplateException e) {
+      throw new IOException(e);
+    }
+  }
+
+  public static void template(HttpServletRequest request, HttpServletResponse response, Attributes attrs,
+      List<Block> blocks) throws IOException {
+
+    Template template = conf.getTemplate("/template.ftl");
+    request.setAttribute("attrs", attrs);
+    request.setAttribute("blocks", blocks);
 
     try {
       template

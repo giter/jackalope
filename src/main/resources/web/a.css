@@ -1,0 +1,26 @@
+@charset "utf-8"
+
+/*RESET CSS {{{*/
+html { color: #000;background: #FFF; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
+fieldset,img {border: 0;}
+li {list-style: none;}
+em {font-style: normal;}
+del {text-decoration: none;}
+th {text-align: inherit;}
+body {text-align: left;position:relative;font: 12px/1.5 arial,simsun;background-attachment:fixed;}
+table{border-collapse: collapse;border-spacing: 0;}
+input,textarea,button,select {outline: none;}
+textarea { resize:none; }
+/*}}}*/
+
+/* Framework {{{ */
+body{color:#333;}
+#head {margin-bottom:18px;}
+#main {width:660px;float:left;}
+#aside{margin-left:680px;width:320px;}
+#aside .block{margin-bottom:-1px;}
+#foot {margin-top:18px;clear:both;margin-bottom:18px;}
+#container {background-color:#fff;margin:0 auto;min-width:1000px;}
+#inner {width:1000px;margin:0 auto;}
+/*}}}*/
