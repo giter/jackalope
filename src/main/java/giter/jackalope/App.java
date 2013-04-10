@@ -26,7 +26,7 @@ public class App {
 
     final ResourceHandler resources = new ResourceHandler() {
 
-      Pattern RESOURCES = Pattern.compile("(css|js|png|jpg|gif|swf)$");
+      Pattern RESOURCES = Pattern.compile("css$|js$|png$|jpg$|gif$|swf$");
 
       @Override
       public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
