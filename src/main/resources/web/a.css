@@ -8,19 +8,19 @@ li {list-style: none;}
 em {font-style: normal;}
 del {text-decoration: none;}
 th {text-align: inherit;}
-body {text-align: left;position:relative;font: 12px/1.5 arial,simsun;background-attachment:fixed;}
+body {text-align: left;position:relative;font: 16px/1.5 microsoft yahei,Georgia,serif;background-attachment:fixed;}
 table{border-collapse: collapse;border-spacing: 0;}
 input,textarea,button,select {outline: none;}
 textarea { resize:none; }
 /*}}}*/
 
 /* Framework {{{ */
-body{color:#333;}
-#head {margin-bottom:18px;}
-#main {width:660px;float:left;}
-#aside{margin-left:680px;width:320px;}
-#aside .block{margin-bottom:-1px;}
-#foot {margin-top:18px;clear:both;margin-bottom:18px;}
-#container {background-color:#fff;margin:0 auto;min-width:1000px;}
-#inner {width:1000px;margin:0 auto;}
+body{color:#556677;background-color:#f5f5d5;}
+a{color:#556677;text-decoration:none;}
+#container {width:960px;margin:12px auto;}
 /*}}}*/
+
+
+#hd .block-common-hd{line-height:48px;border-bottom:1px solid #ccc;margin-bottom:24px;}
+#hd .block-common-hd h1{font-size:24px;}
+#ft .block-common-ft{color:#666;line-height:48px;border-top:1px solid #ccc;margin-top:24px;text-align:right;}

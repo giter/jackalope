@@ -36,28 +36,26 @@ public class TemplateLoader {
     });
   }
 
-  public static void process(HttpServletRequest request, HttpServletResponse response, String name) throws IOException {
+  public static void process(HttpServletRequest req, HttpServletResponse resp, String name) throws IOException {
 
     Template template = conf.getTemplate(name);
 
     try {
-      template
-          .process(new HttpRequestHashModel(request, response, ObjectWrapper.DEFAULT_WRAPPER), response.getWriter());
+      template.process(new HttpRequestHashModel(req, resp, ObjectWrapper.DEFAULT_WRAPPER), resp.getWriter());
     } catch (TemplateException e) {
       throw new IOException(e);
     }
   }
 
-  public static void template(HttpServletRequest request, HttpServletResponse response, Attributes attrs,
-      List<Block> blocks) throws IOException {
+  public static void template(HttpServletRequest req, HttpServletResponse resp, Attributes attrs, List<Block> blocks)
+      throws IOException {
 
     Template template = conf.getTemplate("/template.ftl");
-    request.setAttribute("attrs", attrs);
-    request.setAttribute("blocks", blocks);
+    req.setAttribute("attrs", attrs);
+    req.setAttribute("blocks", blocks);
 
     try {
-      template
-          .process(new HttpRequestHashModel(request, response, ObjectWrapper.DEFAULT_WRAPPER), response.getWriter());
+      template.process(new HttpRequestHashModel(req, resp, ObjectWrapper.DEFAULT_WRAPPER), resp.getWriter());
     } catch (TemplateException e) {
       throw new IOException(e);
     }
