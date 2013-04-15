@@ -7,7 +7,7 @@ import com.mongodb.DBCollection;
 
 public abstract class TopicService {
 
-  static final DBCollection TOPICS = DBLayer.topic();
+  static final DBCollection TOPICS = DBLayer.topics();
 
   public static void save(Topic topic) {
     TOPICS.save(topic);
@@ -15,6 +15,10 @@ public abstract class TopicService {
 
   public static Topic get(String id) {
     return (Topic) TOPICS.findOne(new ObjectId(id));
+  }
+
+  public static Topic findByTitle(String title) {
+    return (Topic) TOPICS.findOne(new BasicDBObject("title", title));
   }
 
   public static void delete(String id) {

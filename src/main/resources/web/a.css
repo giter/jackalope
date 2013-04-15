@@ -14,6 +14,10 @@ input,textarea,button,select {outline: none;}
 textarea { resize:none; }
 /*}}}*/
 
+/* Common CSS {{{ */
+input{font: 16px/1.5 microsoft yahei,Georgia,serif;}
+/*}}}*/
+
 /* Framework {{{ */
 body{color:#556677;background-color:#f5f5d5;}
 a{color:#556677;text-decoration:none;}
@@ -24,3 +28,7 @@ a{color:#556677;text-decoration:none;}
 #hd .block-common-hd{line-height:48px;border-bottom:1px solid #ccc;margin-bottom:24px;}
 #hd .block-common-hd h1{font-size:24px;}
 #ft .block-common-ft{color:#666;line-height:48px;border-top:1px solid #ccc;margin-top:24px;text-align:right;}
+
+#hd .block-user-login input.text {height:24px;line-height:24px;padding:6px;border:1px solid #ccc;border-radius:6px;width:200px;}
+#hd .block-user-login input.button{padding:6px 12px;width:212px;border:1px solid #ccc;border-radius:6px;}
+#hd .block-user-login .form li{margin-bottom:1em;}

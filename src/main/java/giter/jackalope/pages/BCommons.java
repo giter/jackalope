@@ -5,10 +5,10 @@ import giter.jackalope.model.Block;
 public abstract class BCommons {
 
   public static Block hd() {
-    return Block.of("hd", "common-hd");
+    return Block.of(Block.HD, "common-hd");
   }
 
   public static Block ft() {
-    return Block.of("ft", "common-ft");
+    return Block.of(Block.FT, "common-ft");
   }
 }
