@@ -10,6 +10,28 @@ public class Topic extends BasicDBObject {
 
   private static final long serialVersionUID = 1L;
 
+  public Topic() {
+  }
+
+  public Topic(String user, String title, String content) {
+
+    setUser(user);
+    setTitle(title);
+    setContent(content);
+
+    setCreated(System.currentTimeMillis());
+    setUpdated(System.currentTimeMillis());
+
+  }
+
+  public void setUser(String user) {
+    put("user", user);
+  }
+
+  public String getUser() {
+    return getString("user");
+  }
+
   public String getTitle() {
     return getString("title");
   }
@@ -64,7 +86,7 @@ public class Topic extends BasicDBObject {
   }
 
   public void set_id(String _id) {
-    put("_id", new ObjectId(_id));
+    if (_id != null) put("_id", new ObjectId(_id));
   }
 
 }

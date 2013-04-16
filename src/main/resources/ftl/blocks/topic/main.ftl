@@ -1,7 +1,5 @@
+[#assign topic = block.params.topic /]
 <dl>
-	<dt>相似图片搜索的原理</dt>
-	<dd>
-		上个月，Google把"相似图片搜索"正式放上了首页。
-		你可以用一张图片，搜索互联网上所有与它相似的图片。点击搜索框中照相机的图标。
-	</dd>
+	<dt>${topic.title}</dt>
+	<dd>${topic.content}</dd>
 </dl>
