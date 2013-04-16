@@ -29,16 +29,19 @@ public abstract class DBLayer {
     add("topics", Topic.class);
     add("users", User.class);
 
-    indexes();
   }
 
-  static void add(String name, Class<? extends DBObject> clazz) {
+  static void add(String name, Class<? extends DBObject> clazz, DBObject... indexes) {
+
     colls.put(name, db.getCollection(name));
     colls.get(name).setObjectClass(clazz);
-  }
 
-  public static void indexes() {
-    System.err.print("Running MongoFactory.indexes()...");
+    for (DBObject index : indexes) {
+
+      System.err.print(String.format("EnsureIndex: %s(%s)...", name, index.toString()));
+
+      colls.get(name).ensureIndex(index);
+    }
   }
 
   public static DBCollection topics() {
