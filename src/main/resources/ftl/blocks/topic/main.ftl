@@ -1,5 +1,12 @@
 [#assign topic = block.params.topic /]
 <dl>
-	<dt>${topic.title}</dt>
-	<dd>${topic.content}</dd>
+	<dt>
+		<h2>${topic.title}</h2>
+	</dt>
+	<dd>
+		<p>${topic.crdate?string("yyyy-MM-dd")}</p>
+		<div>
+			${topic.content}
+		</div>
+	</dd>
 </dl>

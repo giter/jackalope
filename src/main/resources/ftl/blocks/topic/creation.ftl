@@ -4,6 +4,9 @@
 			<input placeholder='主题' name='title' class='text' type='text' />
 		</li>
 		<li>
+			<input placeholder='分类' name='category' class='text' type='text' />
+		</li>
+		<li>
 			<textarea class='textarea' name='content'></textarea>
 		</li>
 		<li>

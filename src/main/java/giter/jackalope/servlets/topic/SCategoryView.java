@@ -1,6 +1,5 @@
 package giter.jackalope.servlets.topic;
 
-import giter.jackalope.cms.Topic;
 import giter.jackalope.cms.TopicService;
 import giter.jackalope.model.Attributes;
 import giter.jackalope.model.Block;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/topic/*")
-public class STopicView extends HttpServlet {
+@WebServlet(urlPatterns = "/category/*")
+public class SCategoryView extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
 
@@ -32,19 +31,12 @@ public class STopicView extends HttpServlet {
 
     String path = req.getPathInfo().substring(1);
     int dot = path.lastIndexOf(".");
-    Topic topic = TopicService.get(path.substring(0, dot > 0 ? dot : path.length()));
+    String category = path.substring(0, dot > 0 ? dot : path.length());
 
-    blocks.add(BTopic.breadcrumbs(topic));
+    blocks.add(BTopic.list(TopicService.findByCategory(category, Long.MAX_VALUE, 10)));
 
-    if (topic == null) {
-      resp.sendError(404);
-      return;
-    }
-
-    blocks.add(BTopic.main(topic));
-
-    Attributes attrs = new Attributes("page-topic");
+    Attributes attrs = new Attributes("page-topics");
     TemplateLoader.template(req, resp, attrs, blocks);
-
   }
+
 }

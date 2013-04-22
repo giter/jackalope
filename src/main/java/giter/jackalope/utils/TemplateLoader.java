@@ -55,7 +55,7 @@ public class TemplateLoader {
     req.setAttribute("blocks", blocks);
 
     try {
-      template.process(new HttpRequestHashModel(req, resp, ObjectWrapper.DEFAULT_WRAPPER), resp.getWriter());
+      template.process(new HttpRequestHashModel(req, resp, ObjectWrapper.BEANS_WRAPPER), resp.getWriter());
     } catch (TemplateException e) {
       throw new IOException(e);
     }

@@ -1,5 +1,6 @@
 package giter.jackalope.cms;
 
+import java.util.Date;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -13,10 +14,11 @@ public class Topic extends BasicDBObject {
   public Topic() {
   }
 
-  public Topic(String user, String title, String content) {
+  public Topic(String user, String title, String category, String content) {
 
     setUser(user);
     setTitle(title);
+    setCategory(category);
     setContent(content);
 
     setCreated(System.currentTimeMillis());
@@ -56,6 +58,10 @@ public class Topic extends BasicDBObject {
     put("created", created);
   }
 
+  public Date getCrdate() {
+    return new Date(getLong("created", 0));
+  }
+
   public Long getUpdated() {
     return getLong("updated");
   }
@@ -87,6 +93,10 @@ public class Topic extends BasicDBObject {
 
   public void set_id(String _id) {
     if (_id != null) put("_id", new ObjectId(_id));
+  }
+
+  public int getD() {
+    return 1;
   }
 
 }

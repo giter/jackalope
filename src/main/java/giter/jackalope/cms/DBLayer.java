@@ -4,6 +4,7 @@ import java.net.UnknownHostException;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -26,7 +27,7 @@ public abstract class DBLayer {
       throw new RuntimeException();
     }
 
-    add("topics", Topic.class);
+    add("topics", Topic.class, new BasicDBObject("created", -1), new BasicDBObject("category", 1).append("created", -1));
     add("users", User.class);
 
   }
@@ -38,7 +39,7 @@ public abstract class DBLayer {
 
     for (DBObject index : indexes) {
 
-      System.err.print(String.format("EnsureIndex: %s(%s)...", name, index.toString()));
+      System.err.println(String.format("EnsureIndex: %s(%s)...", name, index.toString()));
 
       colls.get(name).ensureIndex(index);
     }

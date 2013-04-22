@@ -2,6 +2,11 @@ package giter.jackalope.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 public class Utils {
 
@@ -32,5 +37,17 @@ public class Utils {
 
     }
 
+  }
+
+  @SuppressWarnings("unchecked")
+  public static <T extends DBObject> List<T> asList(DBCursor cursor) {
+
+    List<T> list = new ArrayList<>();
+
+    for (DBObject o : cursor) {
+      list.add((T) o);
+    }
+
+    return list;
   }
 }

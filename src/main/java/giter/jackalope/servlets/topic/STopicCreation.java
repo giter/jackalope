@@ -44,10 +44,11 @@ public class STopicCreation extends HttpServlet {
 
     String user = u.getName();
     String title = req.getParameter("title");
+    String category = req.getParameter("category");
     String content = req.getParameter("content");
     String _id = req.getParameter("_id");
 
-    Topic t = new Topic(user, title, content);
+    Topic t = new Topic(user, title, category, content);
     t.set_id(_id);
 
     TopicService.save(t);
