@@ -1,4 +1,4 @@
-package jackalope
+package main
 
 import (
 	"fmt"
@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 
 	m,err := mgo.Dial("127.0.0.1");
 	
